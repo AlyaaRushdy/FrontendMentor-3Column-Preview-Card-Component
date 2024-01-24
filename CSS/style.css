@@ -43,7 +43,7 @@ body {
 /* main styling */
 .main {
   width: clamp(30vw, 90vw, 55rem);
-  height: 60vh;
+  min-height: 60vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-radius: 10px;
