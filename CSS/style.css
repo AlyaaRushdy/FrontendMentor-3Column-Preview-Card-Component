@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+/* || RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a:any-link {
+  text-decoration: none;
+}
+
 /* || VARIABLES */
 :root {
   /* || COLORS */
@@ -7,6 +17,7 @@
   --Very-dark-cyan: hsl(179, 100%, 13%);
   --Transparent-white: hsla(0, 0%, 100%, 0.75);
   --Very-light-gray: hsl(0, 0%, 95%);
+  --footer-link: hsl(228, 45%, 44%);
 
   /* || TYPOGRAPHY */
   --headings-font-family: "Big Shoulders Display", sans-serif;
@@ -14,6 +25,83 @@
   --font-family: "Lexend Deca", sans-serif;
   --font-weight: 400;
   --font-size: 15px;
+}
+
+/* || General Styling */
+body {
+  min-height: 100vh;
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  line-height: 1.6;
+  background-color: var(--Very-light-gray);
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main styling */
+.main {
+  width: clamp(30vw, 90vw, 55rem);
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main__section {
+  color: var(--Transparent-white);
+  padding: 2.25rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.main__section--orange {
+  background-color: var(--Bright-orange);
+}
+.main__section--cyan {
+  background-color: var(--Dark-cyan);
+}
+.main__section--dark-cyan {
+  background-color: var(--Very-dark-cyan);
+}
+
+.main__h1 {
+  color: var(--Very-light-gray);
+
+  font-family: var(--headings-font-family);
+  font-size: 2.25em;
+  font-weight: var(--headings-font-weight);
+  text-transform: uppercase;
+}
+
+/* link styling */
+.main__a {
+  display: inline-block;
+  background-color: var(--Very-light-gray);
+  margin-top: auto;
+  padding: 0.5rem 1.5rem;
+
+  border: 1px solid var(--Very-light-gray);
+  border-radius: 1.25rem;
+}
+.main__section--orange .main__a {
+  color: var(--Bright-orange);
+}
+.main__section--cyan .main__a {
+  color: var(--Dark-cyan);
+}
+.main__section--dark-cyan .main__a {
+  color: var(--Very-dark-cyan);
+}
+.main__a:hover,
+.main__a:focus {
+  color: var(--Very-light-gray);
+  background-color: transparent;
 }
 
 /* Footer Styling */
@@ -24,4 +112,17 @@
 }
 .footer a {
   color: var(--footer-link);
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    margin: 1rem 0;
+  }
+  .main {
+    min-width: 275px;
+    width: 85vw;
+    height: auto;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
+  }
 }
